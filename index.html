@@ -809,6 +809,32 @@ footer{background:#071a30;padding:48px 0 64px;color:#fff;position:relative;z-ind
   .cov-image{min-height:240px}
   .cta-metric-value{font-size:30px}
 }
+
+/* ── WHATSAPP FLOATING WIDGET ── */
+:root{--wa:#25D366}
+.wa-launcher{position:fixed;right:34px;bottom:34px;z-index:80;width:62px;height:62px;border:none;border-radius:50%;background:var(--wa);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 18px 40px rgba(37,211,102,.35);transition:transform .18s ease,box-shadow .18s ease,background .18s ease}
+.wa-launcher:hover{transform:translateY(-4px) scale(1.03);box-shadow:0 22px 52px rgba(37,211,102,.42);background:#20BE5B}
+.wa-launcher svg{width:34px;height:34px;fill:currentColor}
+.wa-widget{position:fixed;right:34px;bottom:112px;z-index:81;width:min(380px,calc(100vw - 36px));background:#fff;border-radius:28px;box-shadow:0 28px 80px rgba(9,10,12,.24);border:1px solid rgba(0,0,0,.06);overflow:hidden;opacity:0;pointer-events:none;transform:translateY(18px) scale(.98);transform-origin:bottom right;transition:opacity .22s ease,transform .22s ease}
+.wa-widget.open{opacity:1;pointer-events:auto;transform:translateY(0) scale(1)}
+.wa-widget-head{background:linear-gradient(135deg,#006B5B,#128C7E);color:#fff;padding:18px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.wa-widget-title{display:flex;align-items:center;gap:11px;font-family:'Inter',sans-serif;font-weight:800;font-size:15px;letter-spacing:-.02em}
+.wa-widget-title span{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.wa-widget-title svg{width:21px;height:21px;fill:#fff}
+.wa-close{width:34px;height:34px;border:none;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.wa-close:hover{background:rgba(255,255,255,.24)}
+.wa-close svg{width:18px;height:18px;fill:currentColor}
+.wa-widget-body{padding:18px;background:#F5F1EA}
+.wa-message{max-width:92%;background:#fff;border-radius:4px 20px 20px 20px;padding:13px 15px;margin-bottom:14px;box-shadow:0 6px 18px rgba(0,0,0,.07);font-size:13px;line-height:1.6;color:#26313F}
+.wa-quick-replies{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
+.wa-quick-reply{border:1px solid rgba(18,140,126,.20);background:#fff;color:#006B5B;border-radius:999px;padding:9px 11px;font:800 11px/1 'Inter',sans-serif;letter-spacing:-.01em;cursor:pointer;box-shadow:0 5px 14px rgba(0,0,0,.05);transition:background .18s ease,color .18s ease,border-color .18s ease,transform .18s ease}
+.wa-quick-reply:hover{background:#E7F7EE;color:#075E54;border-color:rgba(18,140,126,.38);transform:translateY(-1px)}
+.wa-widget-form{display:flex;align-items:flex-end;gap:9px;background:#fff;border-radius:26px;padding:9px 8px 9px 16px;border:1px solid #E7E9EE}
+.wa-widget-form textarea{flex:1;min-width:0;border:none;outline:none;background:transparent;font:600 13px/1.45 'Open Sans',sans-serif;color:#1F2937;padding:8px 0;min-height:38px;max-height:88px;resize:none;overflow-y:auto;scrollbar-width:thin}
+.wa-send{width:42px;height:42px;border:none;border-radius:50%;background:var(--cta);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .18s ease,background .18s ease}
+.wa-send:hover{transform:scale(1.05);background:var(--cta-dark)}
+.wa-send svg{width:20px;height:20px;fill:currentColor;transform:translateX(1px)}
+@media(max-width:600px){.wa-launcher{right:18px;bottom:18px}.wa-widget{right:18px;bottom:90px;width:calc(100vw - 36px);border-radius:24px}}
 </style>
 </head>
 <body>
@@ -2500,6 +2526,77 @@ Array.prototype.slice.call(document.querySelectorAll('a[href^="#"]')).forEach(fu
   startQuiz();
 })();
 
+</script>
+
+<!-- ── WHATSAPP FLOATING WIDGET ── -->
+<div class="wa-widget" id="waWidget" aria-label="WhatsApp chat widget">
+  <div class="wa-widget-head">
+    <div class="wa-widget-title">
+      <span aria-hidden="true">
+        <svg viewBox="0 0 90 90"><path d="M90 44a44 44 0 0 1-66 38L0 90l8-24A44 44 0 0 1 46 0c24 0 44 20 44 44zM46 7C25 7 9 24 9 44c0 8 2 15 7 21l-5 14 14-4a37 37 0 0 0 58-31C83 24 66 7 46 7zm22 47l-2-1-7-4-3 1-3 4h-3c-1 0-4-1-8-5-3-3-6-6-6-8v-2l2-2 1-1v-2l-4-8c0-2-1-2-2-2h-2l-3 1c-1 1-4 4-4 9s4 11 5 11c0 1 7 12 18 16 11 5 11 3 13 3s7-2 7-5l1-5z"/></svg>
+      </span>
+      APA Asset Management
+    </div>
+    <button class="wa-close" type="button" id="waClose" aria-label="Close WhatsApp chat">
+      <svg viewBox="0 0 48 48"><path d="M38 12.83 35.17 10 24 21.17 12.83 10 10 12.83 21.17 24 10 35.17 12.83 38 24 26.83 35.17 38 38 35.17 26.83 24z"/></svg>
+    </button>
+  </div>
+  <div class="wa-widget-body">
+    <div class="wa-message">Hi 👋 Need help choosing the right unit trust fund? Send us a message and an APA advisor will guide you.</div>
+    <div class="wa-quick-replies" aria-label="Quick WhatsApp replies">
+      <button class="wa-quick-reply" type="button" data-wa-text="Hello APA, please help me choose the right unit trust fund for my goals.">Help me choose a fund</button>
+      <button class="wa-quick-reply" type="button" data-wa-text="Hello APA, I would like to know how to start investing.">How to start investing</button>
+      <button class="wa-quick-reply" type="button" data-wa-text="Hello APA, I would like to know more about the Money Market Fund.">Money Market Fund</button>
+      <button class="wa-quick-reply" type="button" data-wa-text="Hello APA, I would like to know how withdrawals work.">Withdrawals</button>
+    </div>
+    <div class="wa-widget-form">
+      <textarea id="waInput" rows="1" placeholder="Type your message..." aria-label="WhatsApp message"></textarea>
+      <button class="wa-send" type="button" id="waSend" aria-label="Send message on WhatsApp">
+        <svg viewBox="0 0 48 48"><path d="M4.02 42 46 24 4.02 6 4 20l30 4-30 4z"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+<button class="wa-launcher" type="button" id="waLauncher" aria-label="Open WhatsApp chat">
+  <svg viewBox="0 0 90 90"><path d="M90 44a44 44 0 0 1-66 38L0 90l8-24A44 44 0 0 1 46 0c24 0 44 20 44 44zM46 7C25 7 9 24 9 44c0 8 2 15 7 21l-5 14 14-4a37 37 0 0 0 58-31C83 24 66 7 46 7zm22 47l-2-1-7-4-3 1-3 4h-3c-1 0-4-1-8-5-3-3-6-6-6-8v-2l2-2 1-1v-2l-4-8c0-2-1-2-2-2h-2l-3 1c-1 1-4 4-4 9s4 11 5 11c0 1 7 12 18 16 11 5 11 3 13 3s7-2 7-5l1-5z"/></svg>
+</button>
+
+<script>
+// WhatsApp Widget
+(function(){
+  var phone = '254700000000';
+  var widget = document.getElementById('waWidget');
+  var launcher = document.getElementById('waLauncher');
+  var close = document.getElementById('waClose');
+  var send = document.getElementById('waSend');
+  var input = document.getElementById('waInput');
+  var quickReplies = Array.prototype.slice.call(document.querySelectorAll('.wa-quick-reply'));
+  var hoverTimer = null;
+  var storageKey = 'apaAssetMgmtWaOpened';
+  function setOpen(nextOpen){ widget.classList.toggle('open', nextOpen); launcher.setAttribute('aria-expanded', nextOpen ? 'true' : 'false'); }
+  function openWidget(){ if(hoverTimer){ window.clearTimeout(hoverTimer); hoverTimer = null; } setOpen(true); }
+  function closeWidget(){ if(hoverTimer){ window.clearTimeout(hoverTimer); hoverTimer = null; } setOpen(false); }
+  function scheduleClose(){ if(hoverTimer){ window.clearTimeout(hoverTimer); } hoverTimer = window.setTimeout(function(){ setOpen(false); }, 140); }
+  function openWhatsapp(){ var fallback = 'Hello APA, I need help with my unit trust investment.'; var message = (input.value || fallback).trim(); window.open('https://wa.me/' + phone + '?text=' + encodeURIComponent(message), '_blank', 'noopener'); }
+  function resizeComposer(){ input.style.height = 'auto'; input.style.height = Math.min(input.scrollHeight, 88) + 'px'; }
+  launcher.setAttribute('aria-expanded','false');
+  launcher.addEventListener('click', function(){ if(widget.classList.contains('open')){ closeWidget(); } else { openWidget(); input.focus(); } });
+  if(window.matchMedia && window.matchMedia('(hover: hover)').matches){
+    launcher.addEventListener('mouseenter', openWidget);
+    launcher.addEventListener('mouseleave', scheduleClose);
+    widget.addEventListener('mouseenter', function(){ if(hoverTimer){ window.clearTimeout(hoverTimer); hoverTimer = null; } });
+    widget.addEventListener('mouseleave', scheduleClose);
+  }
+  close.addEventListener('click', closeWidget);
+  document.addEventListener('pointerdown', function(e){ if(!widget.classList.contains('open')) return; if(widget.contains(e.target) || launcher.contains(e.target)) return; closeWidget(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape'){ closeWidget(); } });
+  send.addEventListener('click', openWhatsapp);
+  quickReplies.forEach(function(r){ r.addEventListener('click', function(){ input.value = r.getAttribute('data-wa-text') || r.textContent.trim(); resizeComposer(); input.focus(); }); });
+  input.addEventListener('keydown', function(e){ if(e.key === 'Enter' && !e.shiftKey){ e.preventDefault(); openWhatsapp(); } });
+  input.addEventListener('input', resizeComposer);
+  function openOnLoad(){ try{ if(sessionStorage.getItem(storageKey)) return; sessionStorage.setItem(storageKey, '1'); } catch(err){} window.setTimeout(openWidget, 900); }
+  if(document.readyState === 'complete'){ openOnLoad(); } else { window.addEventListener('load', openOnLoad, {once:true}); }
+})();
 </script>
 
 </body>
