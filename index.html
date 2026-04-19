@@ -237,9 +237,8 @@ linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02));border:1px
 .custom-scrollbar::-webkit-scrollbar-track{background:#f1f5f9}
 .custom-scrollbar::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:999px}
 .fund-detail-panel{width:min(1080px,100%);max-height:min(90vh,860px);overflow:hidden;display:flex;flex-direction:column;border-radius:28px}
-.fund-detail-shell{flex:1;overflow:hidden;display:flex;flex-direction:column;background:#fff}
-.fund-detail-content{flex:1;overflow:auto}
-.fund-detail-header{position:relative;padding:24px 28px;border-bottom:1px solid #eef2f7;display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.fund-detail-shell{flex:1;min-height:0;overflow:hidden;display:flex;flex-direction:column;background:#fff}
+.fund-detail-header{position:relative;padding:24px 28px;border-bottom:1px solid #eef2f7;display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-shrink:0}
 .fund-detail-header-main{display:flex;gap:20px;align-items:flex-start;padding-right:52px}
 .fund-detail-iconbox{width:56px;height:56px;border-radius:18px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;box-shadow:0 12px 28px rgba(15,23,42,.16)}
 .fund-detail-iconbox svg{width:26px;height:26px}
@@ -247,7 +246,7 @@ linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02));border:1px
 .fund-detail-risk.low{background:#dcfce7;color:#166534}
 .fund-detail-risk.moderate{background:#fef3c7;color:#92400e}
 .fund-detail-title{font:700 32px/1.08 'Inter',sans-serif;color:var(--black);margin:0;letter-spacing:-.03em}
-.fund-detail-content{flex:1;overflow:visible;padding:22px 28px 24px;display:flex;flex-direction:column;gap:22px}
+.fund-detail-content{flex:1;min-height:0;overflow:auto;padding:22px 28px 24px;display:flex;flex-direction:column;gap:22px}
 .fund-detail-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .fund-detail-stat{background:#f8fafc;padding:18px;border-radius:18px;border:1px solid #edf2f7}
 .fund-detail-stat-label{display:block;font-size:11px;font-weight:700;color:var(--text-lt);text-transform:uppercase;letter-spacing:.08em}
@@ -278,7 +277,7 @@ linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02));border:1px
 .fund-detail-list{display:flex;flex-direction:column;gap:10px}
 .fund-detail-list-item{display:flex;align-items:flex-start;gap:10px;font-size:14px;line-height:1.6;color:var(--text-md)}
 .fund-detail-list-item svg{width:14px;height:14px;color:#16a34a;flex-shrink:0;margin-top:4px}
-.fund-detail-footer{padding:24px 32px;border-top:1px solid #eef2f7;background:#f8fafc;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.fund-detail-footer{flex-shrink:0;padding:24px 32px;border-top:1px solid #eef2f7;background:#f8fafc;display:flex;justify-content:space-between;align-items:center;gap:20px}
 .fund-detail-footer-copy{display:flex;align-items:center;gap:12px}
 .fund-detail-footer-badges{display:flex;align-items:center}
 .fund-detail-footer-badge{width:32px;height:32px;border-radius:50%;border:2px solid #fff;background:#e2e8f0;color:#334155;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;margin-left:-6px}
