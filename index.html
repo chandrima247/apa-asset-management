@@ -208,7 +208,7 @@ linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02));border:1px
 .fund-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-md);border-color:var(--primary)}
 .fund-card-media{position:relative;overflow:hidden;border-radius:14px;aspect-ratio:16/9;background:#dbe8fb; max-height: 150px;}
 .fund-card-media img{width:100%;height:100%;object-fit:cover;display:block}
-.fund-card-media::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,26,48,.04),rgba(7,26,48,.18))}
+.fund-card-media::after{content:none}
 .fund-card-icon{width:52px;height:52px;background:var(--primary);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .2s}
 .fund-card:hover .fund-card-icon{transform:scale(1.08)}
 .fund-card-icon svg{width:24px;height:24px;color:var(--white)}
@@ -236,8 +236,8 @@ linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02));border:1px
 .custom-scrollbar::-webkit-scrollbar{width:6px}
 .custom-scrollbar::-webkit-scrollbar-track{background:#f1f5f9}
 .custom-scrollbar::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:999px}
-.fund-detail-panel{width:min(1080px,100%);max-height:none;overflow:visible;border-radius:28px}
-.fund-detail-shell{display:flex;flex-direction:column;max-height:none;background:#fff}
+.fund-detail-panel{width:min(1080px,100%);max-height:min(90vh,860px);overflow:auto;border-radius:28px}
+.fund-detail-shell{display:flex;flex-direction:column;background:#fff}
 .fund-detail-header{position:relative;padding:24px 28px;border-bottom:1px solid #eef2f7;display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
 .fund-detail-header-main{display:flex;gap:20px;align-items:flex-start;padding-right:52px}
 .fund-detail-iconbox{width:56px;height:56px;border-radius:18px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;box-shadow:0 12px 28px rgba(15,23,42,.16)}
