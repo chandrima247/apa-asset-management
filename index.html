@@ -161,9 +161,9 @@ h1,h2,h3,h4{font-family:'Inter',sans-serif}
 .planner{background:var(--white);padding:20px 0 16px;display:flex;align-items:center}
 .planner .inner{width:100%}
 .planner-head{max-width:520px}
-.planner-shell{display:grid;grid-template-columns:minmax(0,.92fr) minmax(400px,1.08fr);max-width:1040px;margin:14px auto 0;border:1px solid var(--border);border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 14px 28px rgba(15,23,42,.05)}
-.planner-inputs{padding:18px 20px 20px;background:#fff}
-.planner-results{padding:18px 20px 18px;background:var(--primary);color:#fff;display:flex;flex-direction:column}
+.planner-shell{display:grid;grid-template-columns:minmax(0,.92fr) minmax(400px,1.08fr);max-width:1040px;width:100%;margin:14px auto 0;border:1px solid var(--border);border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 14px 28px rgba(15,23,42,.05)}
+.planner-inputs{padding:18px 20px 20px;background:#fff;min-width:0}
+.planner-results{padding:18px 20px 18px;background:var(--primary);color:#fff;display:flex;flex-direction:column;min-width:0}
 .planner-field{margin-bottom:14px}
 .planner-field:last-child{margin-bottom:0}
 .planner-label,.planner-years-line{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:11px;font-weight:700;color:var(--primary);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
@@ -179,22 +179,22 @@ h1,h2,h3,h4{font-family:'Inter',sans-serif}
 .planner-input.is-error{border-color:var(--accent);box-shadow:0 0 0 4px rgba(220,53,69,.08)}
 .planner-range{width:100%;accent-color:var(--cta);margin-top:2px}
 .planner-result-label{display:block;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.74)}
-.planner-result-value{display:block;font:800 28px/1.02 'Inter',sans-serif;color:#7ef0aa;margin-top:4px;letter-spacing:-.04em}
+.planner-result-value{display:inline-block;font:800 28px/1.02 'Inter',sans-serif;color:#7ef0aa;margin-top:4px;letter-spacing:-.04em;font-variant-numeric:tabular-nums;width:12ch;white-space:nowrap}
 .planner-graph-card{margin-top:12px;padding:10px 12px 12px;border-radius:16px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04)}
 .planner-graph-top{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:6px}
 .planner-graph-label{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.65)}
-.planner-graph-year{font:700 13px/1.2 'Inter',sans-serif;color:#fff}
+.planner-graph-year{font:700 13px/1.2 'Inter',sans-serif;color:#fff;font-variant-numeric:tabular-nums}
 .planner-graph-wrap{position:relative;border-radius:14px;overflow:hidden;background:
 radial-gradient(circle at 1px 1px, rgba(126,240,170,.26) 1.1px, transparent 0) 0 0/12px 12px,
 linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);height:138px}
 .planner-graph-svg{display:block;width:100%;height:100%}
-.planner-graph-start,.planner-graph-end{position:absolute;font:700 10px/1.2 'Inter',sans-serif;color:#fff;z-index:2}
+.planner-graph-start,.planner-graph-end{position:absolute;font:700 10px/1.2 'Inter',sans-serif;color:#fff;z-index:2;font-variant-numeric:tabular-nums;white-space:nowrap;min-width:8ch}
 .planner-graph-start{left:10px;bottom:10px}
 .planner-graph-end{right:10px;top:10px;text-align:right}
 .planner-graph-caption{display:flex;justify-content:space-between;gap:16px;margin-top:8px;font-size:10.5px;color:rgba(255,255,255,.7)}
 .planner-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.12)}
 .planner-stat-label{display:block;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.68)}
-.planner-stat-value{display:block;font:700 17px/1.2 'Inter',sans-serif;color:#fff;margin-top:4px}
+.planner-stat-value{display:inline-block;font:700 17px/1.2 'Inter',sans-serif;color:#fff;margin-top:4px;font-variant-numeric:tabular-nums;white-space:nowrap;min-width:9ch}
 .planner-disclaimer{margin-top:auto;padding-top:10px;font-size:10.5px;line-height:1.45;color:rgba(255,255,255,.58)}
 @media(min-width:1025px){
   .planner{min-height:var(--section-vh);padding:18px 0 16px}
@@ -204,8 +204,11 @@ linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02));border:1px
 /* â”€â”€ FUNDS (2-col card grid) â”€â”€ */
 .funds{background:var(--white);padding:52px 0;display:flex;align-items:center}
 .funds-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:44px}
-.fund-card{background:var(--bg-lt);border-radius:16px;padding:28px 24px;border:1px solid var(--border);transition:transform .22s,box-shadow .22s,border-color .22s;display:flex;flex-direction:column;gap:16px}
+.fund-card{background:var(--bg-lt);border-radius:16px;padding:20px 20px 24px;border:1px solid var(--border);transition:transform .22s,box-shadow .22s,border-color .22s;display:flex;flex-direction:column;gap:16px}
 .fund-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-md);border-color:var(--primary)}
+.fund-card-media{position:relative;overflow:hidden;border-radius:14px;aspect-ratio:16/9;background:#dbe8fb; max-height: 150px;}
+.fund-card-media img{width:100%;height:100%;object-fit:cover;display:block}
+.fund-card-media::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,26,48,.04),rgba(7,26,48,.18))}
 .fund-card-icon{width:52px;height:52px;background:var(--primary);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .2s}
 .fund-card:hover .fund-card-icon{transform:scale(1.08)}
 .fund-card-icon svg{width:24px;height:24px;color:var(--white)}
@@ -233,9 +236,9 @@ linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02));border:1px
 .custom-scrollbar::-webkit-scrollbar{width:6px}
 .custom-scrollbar::-webkit-scrollbar-track{background:#f1f5f9}
 .custom-scrollbar::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:999px}
-.fund-detail-panel{width:min(1024px,100%);max-height:min(90vh,900px);overflow:hidden;border-radius:28px}
-.fund-detail-shell{display:flex;flex-direction:column;max-height:min(90vh,900px);background:#fff}
-.fund-detail-header{position:relative;padding:28px 32px;border-bottom:1px solid #eef2f7;display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.fund-detail-panel{width:min(1080px,100%);max-height:none;overflow:visible;border-radius:28px}
+.fund-detail-shell{display:flex;flex-direction:column;max-height:none;background:#fff}
+.fund-detail-header{position:relative;padding:24px 28px;border-bottom:1px solid #eef2f7;display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
 .fund-detail-header-main{display:flex;gap:20px;align-items:flex-start;padding-right:52px}
 .fund-detail-iconbox{width:56px;height:56px;border-radius:18px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;box-shadow:0 12px 28px rgba(15,23,42,.16)}
 .fund-detail-iconbox svg{width:26px;height:26px}
@@ -243,14 +246,14 @@ linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02));border:1px
 .fund-detail-risk.low{background:#dcfce7;color:#166534}
 .fund-detail-risk.moderate{background:#fef3c7;color:#92400e}
 .fund-detail-title{font:700 32px/1.08 'Inter',sans-serif;color:var(--black);margin:0;letter-spacing:-.03em}
-.fund-detail-content{flex:1;overflow:auto;padding:28px 32px;display:flex;flex-direction:column;gap:28px}
-.fund-detail-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.fund-detail-stat{background:#f8fafc;padding:20px;border-radius:20px;border:1px solid #edf2f7}
+.fund-detail-content{flex:1;overflow:visible;padding:22px 28px 24px;display:flex;flex-direction:column;gap:22px}
+.fund-detail-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.fund-detail-stat{background:#f8fafc;padding:18px;border-radius:18px;border:1px solid #edf2f7}
 .fund-detail-stat-label{display:block;font-size:11px;font-weight:700;color:var(--text-lt);text-transform:uppercase;letter-spacing:.08em}
 .fund-detail-stat-value{display:block;font:700 26px/1.1 'Inter',sans-serif;color:var(--black);margin-top:8px;letter-spacing:-.03em}
 .fund-detail-stat-note{display:block;font-size:11px;line-height:1.5;color:var(--text-lt);margin-top:6px}
-.fund-detail-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(320px,.95fr);gap:32px}
-.fund-detail-col{display:flex;flex-direction:column;gap:24px}
+.fund-detail-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,.9fr);gap:24px}
+.fund-detail-col{display:flex;flex-direction:column;gap:18px}
 .fund-detail-section h4{font-size:12px;font-weight:700;color:var(--black);text-transform:uppercase;letter-spacing:.09em;margin:0 0 14px;display:flex;align-items:center;gap:8px}
 .fund-detail-section h4 svg{width:14px;height:14px;color:var(--cta)}
 .fund-detail-section p{font-size:14px;line-height:1.72;color:var(--text-md);margin:0}
@@ -261,16 +264,16 @@ linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02));border:1px
 .fund-detail-allocation-row strong{color:var(--black);font-size:12px;font-weight:700}
 .fund-detail-allocation-track{width:100%;height:6px;border-radius:999px;background:#e8eef5;overflow:hidden}
 .fund-detail-allocation-fill{height:100%;border-radius:999px}
-.fund-detail-facts-card{background:#0f172a;color:#fff;padding:24px;border-radius:24px}
+.fund-detail-facts-card{background:#0f172a;color:#fff;padding:20px;border-radius:22px}
 .fund-detail-facts-card h4{margin:0 0 16px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#94a3b8}
 .fund-detail-facts{display:flex;flex-direction:column;gap:0}
 .fund-detail-fact{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid rgba(148,163,184,.22)}
 .fund-detail-fact:last-child{border-bottom:none;padding-bottom:0}
 .fund-detail-fact span{font-size:13px;line-height:1.5;color:#94a3b8}
 .fund-detail-fact strong{font-size:13px;line-height:1.5;color:#fff;text-align:right;font-weight:600}
-.fund-detail-card{padding:22px;border:1px solid var(--border);border-radius:20px;background:#fff}
+.fund-detail-card{padding:18px 20px;border:1px solid var(--border);border-radius:18px;background:#fff}
 .fund-detail-card h5{font:600 16px/1.3 'Inter',sans-serif;color:var(--black);margin:0 0 12px}
-.fund-detail-card.full-width{padding:22px 24px}
+.fund-detail-card.full-width{padding:18px 20px}
 .fund-detail-list{display:flex;flex-direction:column;gap:10px}
 .fund-detail-list-item{display:flex;align-items:flex-start;gap:10px;font-size:14px;line-height:1.6;color:var(--text-md)}
 .fund-detail-list-item svg{width:14px;height:14px;color:#16a34a;flex-shrink:0;margin-top:4px}
@@ -373,8 +376,8 @@ linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02));border:1px
 .unittrust-card:hover .unittrust-card-icon{background:#dbeafe;color:#1e40af}
 .unittrust-card-icon{width:38px;height:38px;border-radius:12px;background:#f8fafc;color:#94a3b8;display:flex;align-items:center;justify-content:center;transition:background .28s ease,color .28s ease;margin-bottom:12px}
 .unittrust-card-icon svg{width:17px;height:17px}
-.unittrust-card h3{font:700 14px/1.3 'Inter',sans-serif;color:var(--black);margin:0 0 4px}
-.unittrust-card p{font-size:12.5px;line-height:1.58;color:var(--text-md);margin:0}
+.unittrust-card h3{font:700 16px/1.3 'Inter',sans-serif;color:var(--black);margin:0 0 6px}
+.unittrust-card p{font-size:14px;line-height:1.62;color:var(--text-md);margin:0}
 .unittrust-actions{display:flex;align-items:center;gap:18px;padding-top:2px}
 .unittrust-actions .btn-primary{box-shadow:0 16px 36px rgba(12,77,162,.14)}
 .unittrust-link{font-size:14px;font-weight:600;color:var(--text-md);text-decoration:none;transition:color .18s ease}
@@ -384,14 +387,17 @@ linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02));border:1px
 .cov{background:var(--white);padding:38px 0 40px;display:flex;align-items:center}
 .cov-head{display:flex;align-items:flex-start;justify-content:space-between;gap:24px}
 .cov-head-copy{display:flex;flex-direction:column;align-items:flex-start}
-.cov-list{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}
-.cov-item{display:flex;align-items:center;gap:14px;padding:22px 20px;min-height:112px;background:var(--bg-lt);border-radius:12px;border:1px solid var(--border);transition:border-color .2s,box-shadow .2s}
-.cov-item:hover{border-color:var(--primary);box-shadow:var(--shadow-sm)}
-.cov-item-icon{width:34px;height:34px;background:var(--primary);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.cov-item-icon svg{width:16px;height:16px;color:var(--white)}
-.cov-item-text{display:flex;flex-direction:column;gap:2px}
-.cov-item-title{font-size:13px;font-weight:700;color:var(--black);line-height:1.2}
-.cov-item-desc{font-size:11.5px;color:var(--text-lt);line-height:1.4}
+.cov-shell{display:grid;grid-template-columns:minmax(320px,.9fr) minmax(0,1.1fr);gap:34px;align-items:center;margin-top:24px}
+.cov-image{border-radius:24px;overflow:hidden;border:1px solid var(--border);box-shadow:0 22px 54px rgba(15,23,42,.12);background:#d9e6f7;min-height:520px}
+.cov-image img{width:100%;height:100%;display:block;object-fit:cover;object-position:center 28%}
+.cov-list{display:flex;flex-direction:column;gap:0}
+.cov-item{display:flex;align-items:flex-start;gap:14px;padding:20px 0;border-bottom:1px solid var(--border)}
+.cov-item:last-child{border-bottom:none;padding-bottom:0}
+.cov-item-icon{width:40px;height:40px;background:var(--primary);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cov-item-icon svg{width:18px;height:18px;color:var(--white)}
+.cov-item-text{display:flex;flex-direction:column;gap:4px;padding-top:2px}
+.cov-item-title{font-size:15px;font-weight:700;color:var(--black);line-height:1.25}
+.cov-item-desc{font-size:13px;color:var(--text-lt);line-height:1.5}
 
 /* â”€â”€ RISK PROFILES â”€â”€ */
 .risk-sec{background:#F2F2F5;padding:52px 0;display:flex;align-items:center}
@@ -423,7 +429,20 @@ linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02));border:1px
 
 /* â”€â”€ BEFORE YOU APPLY â”€â”€ */
 .before{background:var(--white);padding:52px 0;display:flex;align-items:center}
-.before-layout{margin-top:44px}
+.before-cards{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(300px,.68fr);gap:18px;align-items:start;margin-top:28px}
+.before-main{min-width:0}
+.before-layout{margin-top:0}
+.before-elig-card{background:linear-gradient(180deg,var(--primary-dark) 0%,var(--primary) 100%);border-radius:20px;padding:22px 22px 20px;color:var(--white);box-shadow:0 18px 40px rgba(13,52,95,.16);border:1px solid rgba(255,255,255,.08)}
+.before-elig-tag{display:inline-flex;align-items:center;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.14);font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.78);margin-bottom:14px}
+.before-elig-card h3{font-size:24px;font-weight:800;line-height:1.15;letter-spacing:-.02em;margin:0 0 40px;color:var(--white);font-family:'Inter',sans-serif}
+.before-elig-card p{font-size:13.5px;line-height:1.55;color:rgba(255,255,255,.76);margin:0}
+.before-elig-list{display:flex;flex-direction:column;gap:10px;margin-top:18px}
+.before-elig-item{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-top:1px solid rgba(255,255,255,.1)}
+.before-elig-item:first-child{border-top:none;padding-top:0}
+.before-elig-mark{width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.before-elig-mark svg{width:11px;height:11px;color:var(--white)}
+.before-elig-item span{font-size:13.5px;line-height:1.5;color:var(--white)}
+.before-elig-item strong{font-weight:700}
 .cl-list{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--white);border-radius:16px;border:1px solid var(--border);overflow:hidden;box-shadow:var(--shadow-sm)}
 .cl-row{display:flex;align-items:flex-start;gap:16px;padding:22px 24px;border-bottom:1px solid var(--border);position:relative}
 .cl-row:nth-child(odd){border-right:1px solid var(--border)}
@@ -434,24 +453,24 @@ linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02));border:1px
 .cl-desc{font-size:12.5px;color:var(--text-md);line-height:1.55;margin-bottom:0}
 
 /* â”€â”€ APPLICATION STEPS â”€â”€ */
-.enroll-sec{background:var(--bg-lt);padding:56px 0;min-height:auto;display:flex;align-items:center}
-.enroll-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(320px,.9fr);gap:0;margin-top:28px;background:var(--white);border:1px solid var(--border);border-radius:28px;box-shadow:var(--shadow-md);overflow:hidden;align-items:stretch}
-.enroll-panel{padding:22px 24px 22px;height:auto;display:flex;flex-direction:column;background:transparent;align-self:start}
-.enroll-title{font-size:20px;font-weight:800;color:var(--black);margin-bottom:16px;letter-spacing:-.02em}
-.enroll-steps{display:flex;flex-direction:column;gap:0}
-.enroll-step{display:flex;gap:14px;align-items:flex-start;padding:14px 0}
-.enroll-step+.enroll-step{border-top:none}
-.enroll-step-num{width:32px;height:32px;background:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--white);font-size:13px;font-weight:800;box-shadow:0 6px 14px rgba(13,52,95,.18)}
-.enroll-step-copy{font-size:15px;color:var(--text);margin:0;line-height:1.6;padding-top:5px}
-.enroll-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.enroll-card{padding:15px 16px 14px;background:rgba(255,255,255,.94);border-radius:18px;border:1px solid rgba(18,18,18,.08);box-shadow:0 8px 18px rgba(17,17,17,.045);min-height:0;align-self:start}
-.enroll-card-icon{width:32px;height:32px;border-radius:10px;background:var(--primary-lt);display:flex;align-items:center;justify-content:center;margin-bottom:10px}
-.enroll-card-icon svg{width:16px;height:16px;color:var(--primary)}
-.enroll-card-title{font-size:14px;font-weight:800;color:var(--black);margin:0 0 6px;line-height:1.35}
-.enroll-card-copy{font-size:12.5px;color:var(--text-md);margin:0;line-height:1.55}
-.enroll-visual{position:relative;min-height:100%;background:linear-gradient(180deg,rgba(247,249,252,.55),rgba(255,255,255,0));border-left:1px solid var(--border);align-self:stretch;overflow:hidden}
-.enroll-visual::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,52,95,.02) 0%,rgba(13,52,95,.08) 100%);pointer-events:none}
-.enroll-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;object-position:58% 22%;transform:scale(1.03)}
+.enroll-sec{background:var(--primary);padding:72px 0 76px;min-height:auto;display:flex;align-items:center}
+.enroll-sec .stag{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.16);color:#fff}
+.enroll-sec .sec-h2{color:var(--white)}
+.enroll-sec .sec-p{color:rgba(255,255,255,.72)}
+.enroll-grid{margin-top:26px}
+.enroll-panel{padding:0;height:auto;display:flex;flex-direction:column;background:transparent}
+.enroll-title{display:none}
+.enroll-cards{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px;position:relative}
+.enroll-cards::before{content:'';position:absolute;left:8%;right:8%;top:26px;height:2px;border-top:2px dashed rgba(255,255,255,.28);z-index:0}
+.enroll-card{position:relative;padding:26px 24px 22px;background:rgba(255,255,255,.98);border-radius:22px;border:1px solid rgba(255,255,255,.22);box-shadow:0 18px 36px rgba(8,20,38,.16);min-height:220px;z-index:1}
+.enroll-card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:18px}
+.enroll-step-num{width:44px;height:44px;background:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--white);font-size:20px;font-weight:800;box-shadow:0 8px 18px rgba(13,52,95,.18)}
+.enroll-card-icon{width:38px;height:38px;border-radius:12px;background:#f7f9fc;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.enroll-card-icon svg{width:18px;height:18px;color:var(--black)}
+.enroll-card-title{font-size:17px;font-weight:800;color:var(--black);margin:0 0 10px;line-height:1.28}
+.enroll-card-copy{font-size:14px;color:var(--text-md);margin:0;line-height:1.55}
+.enroll-card-copy a{color:var(--cta);font-weight:700;text-decoration:none}
+.enroll-card-copy a:hover{color:var(--cta-dark)}
 
 /* â”€â”€ FAQ â”€â”€ */
 .faq{background:var(--white);padding:52px 0}
@@ -470,18 +489,30 @@ linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02));border:1px
 .faq-item.open .faq-a{max-height:420px;padding:0 20px 18px}
 
 /* â”€â”€ CTA SECTION â”€â”€ */
-.cta-bg{background:linear-gradient(135deg,var(--primary-dark) 0%,var(--primary) 42%,var(--cta) 100%);padding:56px 0;min-height:420px;position:relative;overflow:hidden;display:flex;align-items:center}
-.cta-bg::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 72% 48%,rgba(220,53,69,.16) 0%,transparent 58%);pointer-events:none}
-.cta-inner{max-width:1360px;margin:0 auto;padding:0 40px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:100%;width:100%}
-.cta-inner h2{font-size:40px;font-weight:800;color:var(--white);margin-bottom:16px;line-height:1.15}
-.cta-inner h2 span{color:var(--accent)}
-.cta-inner>p{font-size:17px;color:rgba(255,255,255,.75);line-height:1.6;margin-bottom:36px;max-width:540px}
-.cta-btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
-.btn-cta{background:#fff;color:var(--primary);border:none;border-radius:10px;padding:15px 34px;font-size:16px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:10px;text-decoration:none;transition:background .2s,transform .15s,box-shadow .15s}
-.btn-cta:hover{background:#f0f6ff;transform:translateY(-2px);box-shadow:0 6px 24px rgba(0,0,0,.18)}
+.cta-bg{background:linear-gradient(180deg,var(--primary-dark) 0%,#0a2f56 58%,var(--primary) 100%);padding:40px 0 28px;position:relative;overflow:hidden;display:flex;align-items:center}
+.cta-bg::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 78% 18%,rgba(12,77,162,.14),transparent 32%),linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,0));pointer-events:none}
+.cta-inner{max-width:1360px;margin:0 auto;padding:0 40px;display:flex;flex-direction:column;gap:56px;width:100%;position:relative;z-index:1}
+.cta-top{display:grid;grid-template-columns:minmax(0,520px) auto;gap:24px;align-items:center;justify-content:space-between}
+.cta-top-copy .stag{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.16);color:var(--white)}
+.cta-top-copy h2{font:700 28px/1.15 'Open Sans',sans-serif;color:rgba(255,255,255,.94);margin:0;max-width:20ch;letter-spacing:-.02em}
+.cta-top-copy p{font-size:14px;color:rgba(255,255,255,.58);line-height:1.65;max-width:560px}
+.cta-metrics{display:flex;align-items:stretch;gap:0}
+.cta-metric{padding:2px 24px 0;border-left:1px solid rgba(255,255,255,.1);display:flex;flex-direction:column;justify-content:flex-end}
+.cta-metric:first-child{border-left:none;padding-left:0}
+.cta-metric-value{font-size:40px;font-weight:800;line-height:1;color:var(--white);font-family:'Inter',sans-serif;letter-spacing:-.04em}
+.cta-metric-label{margin-top:6px;font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,.42)}
+.cta-panel{background:#ffffff;border-radius:28px;padding:80px;min-height:260px;display:grid;grid-template-columns:1fr 120px;gap:20px;align-items:center;box-shadow:0 24px 64px rgba(0,0,0,.16);width:min(1180px,100%);margin:0 auto}
+.cta-panel-copy h3{font-size:40px;font-weight:800;color:#0b1b33;line-height:1.08;letter-spacing:-.03em;margin:0 0 14px;max-width:16ch}
+.cta-panel-copy p{font-size:14px;color:#4f6178;line-height:1.65;max-width:520px;margin:0 0 22px}
+.cta-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-cta{background:#081a33;color:#fff;border:none;border-radius:12px;padding:13px 22px;font-size:14px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:10px;text-decoration:none;transition:background .2s,transform .15s,box-shadow .15s}
+.btn-cta:hover{background:#0d2547;transform:translateY(-2px);box-shadow:0 10px 24px rgba(8,26,51,.2)}
 .btn-cta:active{transform:scale(.97)}
-.btn-cta-ghost{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:10px;font-size:15px;font-weight:600;color:var(--white);border:2px solid rgba(255,255,255,.55);text-decoration:none;transition:all .2s}
-.btn-cta-ghost:hover{border-color:var(--white);background:rgba(255,255,255,.12)}
+.btn-cta-ghost{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:12px;font-size:14px;font-weight:600;color:#0b1b33;border:1.5px solid rgba(11,27,51,.16);background:transparent;text-decoration:none;transition:all .2s}
+.btn-cta-ghost:hover{border-color:rgba(11,27,51,.32);background:rgba(255,255,255,.42)}
+.cta-mark{justify-self:end;width:96px;height:96px;border-radius:28px;background:rgba(13,52,95,.05);display:flex;align-items:center;justify-content:center}
+.cta-mark svg{width:54px;height:54px;color:rgba(13,52,95,.18)}
+.cta-note{font-size:12px;color:rgba(255,255,255,.3);margin-top:2px}
 
 /* â”€â”€ WHATSAPP SECTION â”€â”€ */
 .wa-sec{background:var(--bg-lt);padding:72px 0}
@@ -541,7 +572,7 @@ linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02));border:1px
 .wa-send svg{width:20px;height:20px;fill:currentColor;transform:translateX(1px)}
 
 /* â”€â”€ FOOTER â”€â”€ */
-footer{background:#0d0d0d;padding:48px 0 64px;color:#fff;position:relative;z-index:1}
+footer{background:#071a30;padding:48px 0 64px;color:#fff;position:relative;z-index:1}
 .ft-inner{max-width:1360px;margin:0 auto;padding:0 40px}
 .ft-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:44px;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,.08)}
 .ft-brand p{font-size:13px;color:rgba(255,255,255,.4);line-height:1.7;margin-top:12px;max-width:260px}
@@ -571,10 +602,16 @@ footer{background:#0d0d0d;padding:48px 0 64px;color:#fff;position:relative;z-ind
   .planner-results{border-top:1px solid rgba(255,255,255,.08)}
   .funds-grid{grid-template-columns:1fr 1fr}
   .risk-grid{grid-template-columns:1fr 1fr}
-  .cov-list{grid-template-columns:1fr 1fr}
+  .cta-top{grid-template-columns:1fr;gap:18px;align-items:start}
+  .cta-metrics{gap:18px}
+  .cta-metric{padding:0 18px;border-left:1px solid rgba(255,255,255,.1)}
+  .cta-panel{grid-template-columns:1fr 120px;padding:32px}
+  .cov-shell{grid-template-columns:1fr;gap:18px}
+  .cov-image{min-height:360px}
+  .before-cards{grid-template-columns:1fr}
   .elig-list{grid-template-columns:1fr}
- .enroll-grid{grid-template-columns:1fr}
- .enroll-visual{border-left:none;border-top:1px solid var(--border);min-height:280px}
+  .enroll-cards{grid-template-columns:1fr 1fr}
+  .enroll-cards::before{display:none}
   .ft-top{grid-template-columns:1fr 1fr;gap:28px}
   .wa-inner{grid-template-columns:1fr;gap:36px;text-align:center}
   .wa-img-wrap{order:-1}
@@ -644,7 +681,7 @@ footer{background:#0d0d0d;padding:48px 0 64px;color:#fff;position:relative;z-ind
 
   .funds{padding:44px 0}
   .funds-grid{grid-template-columns:1fr;gap:12px;margin-top:24px}
-  .fund-card{padding:20px 16px}
+  .fund-card{padding:18px 16px 20px}
   .fund-modal{padding:16px}
   .fund-detail-panel{border-radius:24px}
   .fund-detail-header{padding:24px 20px 20px}
@@ -700,16 +737,17 @@ footer{background:#0d0d0d;padding:48px 0 64px;color:#fff;position:relative;z-ind
   .unittrust-grid{grid-template-columns:1fr 1fr;gap:10px}
   .unittrust-card{padding:18px;border-radius:24px}
   .unittrust-card-icon{width:38px;height:38px;margin-bottom:14px}
-  .unittrust-card h3{font-size:14px}
-  .unittrust-card p{font-size:12px}
+  .unittrust-card h3{font-size:15px}
+  .unittrust-card p{font-size:13px}
   .unittrust-actions{flex-wrap:wrap;gap:16px}
 
   .cov{padding:34px 0 36px}
-  .cov-list{grid-template-columns:1fr 1fr;gap:8px;margin-top:24px}
-  .cov-item{padding:16px 12px;gap:10px;min-height:unset}
-  .cov-item-icon{width:32px;height:32px;border-radius:7px}
-  .cov-item-icon svg{width:15px;height:15px}
-  .cov-item-title{font-size:12.5px}
+  .cov-image{min-height:300px;border-radius:20px}
+  .cov-item{padding:14px 0;gap:12px}
+  .cov-item-icon{width:34px;height:34px;border-radius:8px}
+  .cov-item-icon svg{width:16px;height:16px}
+  .cov-item-title{font-size:13px}
+  .cov-item-desc{font-size:12px}
 
   .risk-sec{padding:44px 0}
   .risk-grid{grid-template-columns:1fr;gap:12px;margin-top:24px}
@@ -718,15 +756,22 @@ footer{background:#0d0d0d;padding:48px 0 64px;color:#fff;position:relative;z-ind
   .elig-list{grid-template-columns:1fr}
 
   .before{padding:44px 0}
-  .before-layout{margin-top:24px}
+  .before-cards{gap:14px;margin-top:22px}
+  .before-elig-card{padding:18px 18px 16px}
+  .before-elig-card h3{font-size:20px}
+  .before-layout{margin-top:0}
   .cl-list{grid-template-columns:1fr}
   .cl-row{border-right:none!important;padding:16px 16px}
   .cl-row:nth-last-child(-n+2){border-bottom:1px solid var(--border)}
   .cl-row:last-child{border-bottom:none}
 
-  .enroll-sec{padding:44px 0}
-  .enroll-panel{padding:22px 20px}
-  .enroll-cards{grid-template-columns:1fr}
+  .enroll-sec{padding:52px 0}
+  .enroll-cards{grid-template-columns:1fr;gap:12px}
+  .enroll-card{min-height:unset;padding:20px 18px 18px}
+  .enroll-step-num{width:40px;height:40px;font-size:18px}
+  .enroll-card-title{font-size:15px}
+  .enroll-card-copy{font-size:13px}
+  .enroll-summary{margin-top:14px;padding:14px 16px}
 
   .faq{padding:44px 0}
   .faq-grid{grid-template-columns:1fr;gap:8px}
@@ -734,12 +779,19 @@ footer{background:#0d0d0d;padding:48px 0 64px;color:#fff;position:relative;z-ind
   .faq-item.open .faq-a{max-height:520px}
   .faq-a{font-size:12.5px}
 
-  .cta-bg{padding:44px 0;min-height:0}
-  .cta-inner{padding:0 16px}
-  .cta-inner h2{font-size:24px}
-  .cta-inner>p{font-size:14px;margin-bottom:28px}
+  .cta-bg{padding:40px 0 28px}
+  .cta-inner{padding:0 16px;gap:20px}
+  .cta-top-copy h2{font-size:22px;max-width:20ch}
+  .cta-top-copy p{font-size:14px}
+  .cta-metrics{flex-wrap:wrap;gap:12px}
+  .cta-metric{padding:0 12px;border-left:none}
+  .cta-metric-value{font-size:34px}
+  .cta-panel{grid-template-columns:1fr;padding:26px 22px;border-radius:22px}
+  .cta-panel-copy h3{font-size:22px;max-width:14ch}
+  .cta-panel-copy p{font-size:14px;margin-bottom:18px}
   .cta-btns{flex-direction:column;gap:10px}
   .btn-cta,.btn-cta-ghost{width:100%;justify-content:center;font-size:15px}
+  .cta-mark{display:none}
 
   footer{padding:36px 0 0}
   .ft-top{grid-template-columns:1fr;gap:20px;padding-bottom:20px}
@@ -754,7 +806,8 @@ footer{background:#0d0d0d;padding:48px 0 64px;color:#fff;position:relative;z-ind
   .hero-content h1{font-size:22px}
   .hero-step{flex:0 0 calc(50% - 4px)}
   .trust-badges{flex-direction:column;gap:6px}
-  .cov-list{grid-template-columns:1fr}
+  .cov-image{min-height:240px}
+  .cta-metric-value{font-size:30px}
 }
 </style>
 </head>
@@ -767,16 +820,16 @@ footer{background:#0d0d0d;padding:48px 0 64px;color:#fff;position:relative;z-ind
       <img src="https://www.apainsurance.org/img/logon.png" alt="APA Asset Management" />
     </a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#how-it-works">How It Works</a></li>
-      <li><a href="#funds">Our Funds</a></li>
-      <li><a href="#features">Why APA</a></li>
-      <li><a href="#eligibility">Who Can Apply</a></li>
-      <li><a href="#faq">FAQ</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#funds">Our Funds</a></li>
+        <li><a href="#planner">Planner</a></li>
+          <li><a href="#apply">Before You Apply</a></li>
+          <li><a href="#faq">FAQ</a></li>
     </ul>
     <div class="nav-right">
-      <a href="#apply" class="btn-nav">
+      <a href="#" class="btn-nav open-risk-quiz">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        Start Investing
+        Check Your Fit
       </a>
       <a href="https://www.nxt.pe" target="_blank" rel="noopener" class="nav-nxtpe-corner">
         <img src="https://www.nxt.pe/assets/nxtpeLogo.png" alt="NxtPe" />
@@ -796,9 +849,9 @@ footer{background:#0d0d0d;padding:48px 0 64px;color:#fff;position:relative;z-ind
       <h1>Grow Your Wealth<br/>with <span>Confidence</span></h1>
       <p>Invest in professionally managed unit trust funds designed for stability, income, and long-term growth across Kenya.</p>
       <div class="cta-row">
-        <a href="#apply" class="btn-primary">
+        <a href="#" class="btn-primary open-risk-quiz">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          Start Investing
+          Take Risk Quiz
         </a>
         <a href="#funds" class="btn-outline">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
@@ -864,7 +917,7 @@ footer{background:#0d0d0d;padding:48px 0 64px;color:#fff;position:relative;z-ind
       <div class="unittrust-content">
         <span class="stag">What Is a Unit Trust</span>
         <div>
-          <h2 class="unittrust-title">Invest <span class="accent">better</span>, together.</h2>
+          <h2 class="unittrust-title">What is a unit trust?</h2>
           <p class="unittrust-copy">A unit trust pools investor money into one professionally managed portfolio, giving you diversification and expert oversight from the start.</p>
         </div>
 
@@ -902,68 +955,60 @@ footer{background:#0d0d0d;padding:48px 0 64px;color:#fff;position:relative;z-ind
           </div>
         </div>
 
-        <div class="unittrust-actions">
-          <a href="#funds" class="btn-primary">View Funds <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-          <a href="#how-it-works" class="unittrust-link">Learn more</a>
-        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
-<section class="hiw" id="how-it-works">
+<!-- INVESTOR JOURNEY -->
+<section class="enroll-sec" id="how-it-works">
   <div class="inner">
     <span class="stag">How It Works</span>
-    <h2 class="sec-h2">Start Investing in 4 Simple Steps</h2>
+    <h2 class="sec-h2">Start Investing in 5 Steps</h2>
 
-    <div class="hiw-steps">
-      <div class="hiw-step">
-        <div class="hiw-step-top">
-          <div class="hiw-step-num">1</div>
-          <div class="hiw-step-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <div class="enroll-grid">
+      <div class="enroll-panel">
+        <div class="enroll-cards">
+          <div class="enroll-card">
+            <div class="enroll-card-top">
+              <div class="enroll-step-num">1</div>
+              <div class="enroll-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/><path d="M8 7h8"/><path d="M8 11h8"/><path d="M8 15h5"/></svg></div>
+            </div>
+            <p class="enroll-card-title">Keep Things Ready</p>
+            <p class="enroll-card-copy">Review <a href="#apply">Before You Apply</a> and keep your key details ready.</p>
           </div>
-        </div>
-        <div class="hiw-step-body">
-          <h3>Choose Your Fund</h3>
-          <p>Select Money Market or Balanced Fund based on your goals.</p>
-        </div>
-      </div>
-      <div class="hiw-step">
-        <div class="hiw-step-top">
-          <div class="hiw-step-num">2</div>
-          <div class="hiw-step-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <div class="enroll-card">
+            <div class="enroll-card-top">
+              <div class="enroll-step-num">2</div>
+              <div class="enroll-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h5"/></svg></div>
+            </div>
+            <p class="enroll-card-title">Fill the Form</p>
+            <p class="enroll-card-copy">Complete the form in about 5 minutes, including your details and <a href="#risk">risk profile</a> questions.</p>
           </div>
-        </div>
-        <div class="hiw-step-body">
-          <h3>Complete Your Application</h3>
-          <p>Fill in your account opening and investment details.</p>
-        </div>
-      </div>
-      <div class="hiw-step">
-        <div class="hiw-step-top">
-          <div class="hiw-step-num">3</div>
-          <div class="hiw-step-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M6 15h4"/></svg>
+          <div class="enroll-card">
+            <div class="enroll-card-top">
+              <div class="enroll-step-num">3</div>
+              <div class="enroll-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg></div>
+            </div>
+            <p class="enroll-card-title">Choose Your Fund</p>
+            <p class="enroll-card-copy">Compare <a href="#funds">Our Funds</a> and choose the fund that best fits your goal.</p>
           </div>
-        </div>
-        <div class="hiw-step-body">
-          <h3>Risk Assessment</h3>
-          <p>Answer a few questions to match your investment profile.</p>
-        </div>
-      </div>
-      <div class="hiw-step">
-        <div class="hiw-step-top">
-          <div class="hiw-step-num">4</div>
-          <div class="hiw-step-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+          <div class="enroll-card">
+            <div class="enroll-card-top">
+              <div class="enroll-step-num">4</div>
+              <div class="enroll-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></div>
+            </div>
+            <p class="enroll-card-title">Make Your Payment</p>
+            <p class="enroll-card-copy">Make your first investment using the payment method noted in <a href="#apply">Before You Apply</a>.</p>
           </div>
-        </div>
-        <div class="hiw-step-body">
-          <h3>Make Your Investment</h3>
-          <p>Fund your account via bank or mobile payment.</p>
+          <div class="enroll-card">
+            <div class="enroll-card-top">
+              <div class="enroll-step-num">5</div>
+              <div class="enroll-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17 9 11l4 4 8-8"/><path d="M14 7h7v7"/></svg></div>
+            </div>
+            <p class="enroll-card-title">Receive Your Units</p>
+            <p class="enroll-card-copy">Once payment is received, your account is confirmed and units are allocated.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -981,8 +1026,8 @@ footer{background:#0d0d0d;padding:48px 0 64px;color:#fff;position:relative;z-ind
 
       <!-- Money Market Fund -->
       <div class="fund-card">
-        <div class="fund-card-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        <div class="fund-card-media">
+          <img src="https://i.ibb.co/tTRtnkLv/hero-uganda-businesswoman.jpg" alt="Professional investor reviewing financial goals" loading="lazy" />
         </div>
         <div>
           <h3>Money Market Fund</h3>
@@ -1011,8 +1056,8 @@ footer{background:#0d0d0d;padding:48px 0 64px;color:#fff;position:relative;z-ind
 
       <!-- Balanced Fund -->
       <div class="fund-card">
-        <div class="fund-card-icon" style="background:var(--accent)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        <div class="fund-card-media">
+          <img src="https://i.ibb.co/DgP5zsSS/eligibility-couple-consultation.jpg" alt="Investors reviewing long-term financial plans with an advisor" loading="lazy" />
         </div>
         <div>
           <h3>Balanced Fund</h3>
@@ -1039,6 +1084,52 @@ footer{background:#0d0d0d;padding:48px 0 64px;color:#fff;position:relative;z-ind
         <button class="fund-learn-btn" type="button" data-fund-modal="balanced">Learn more</button>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- RISK PROFILES -->
+<section class="risk-sec" id="risk">
+  <div class="inner">
+    <span class="stag">Investment Approach</span>
+    <h2 class="sec-h2">Your Investment Is Matched to Your Profile</h2>
+    <p class="sec-p">A short assessment helps match you to the right fund before you go deeper.</p>
+
+    <div class="risk-grid">
+      <div class="risk-card">
+        <div class="risk-card-num">C</div>
+        <h3>Conservative Profile</h3>
+        <p class="risk-desc">Focus on safety, liquidity, and preserving capital.</p>
+        <div class="risk-recommended">
+          <span class="risk-rec-lbl">Recommended Match</span>
+          <a href="#funds" class="risk-fund-link">Money Market Fund <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+      <div class="risk-card">
+        <div class="risk-card-num">M</div>
+        <h3>Moderate Profile</h3>
+        <p class="risk-desc">Balance between growth potential and portfolio stability.</p>
+        <div class="risk-recommended">
+          <span class="risk-rec-lbl">Recommended Match</span>
+          <a href="#funds" class="risk-fund-link">Balanced Fund <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+      <div class="risk-card">
+        <div class="risk-card-num">A</div>
+        <h3>Growth Profile</h3>
+        <p class="risk-desc">Higher return expectations may lead to more growth-oriented balanced exposure.</p>
+        <div class="risk-recommended">
+          <span class="risk-rec-lbl">Recommended Match</span>
+          <a href="#funds" class="risk-fund-link">Balanced Fund <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="risk-cta">
+      <button type="button" class="btn-primary" id="riskQuizOpen" style="display:inline-flex">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        Check Your Investor Profile
+      </button>
     </div>
   </div>
 </section>
@@ -1164,6 +1255,11 @@ footer{background:#0d0d0d;padding:48px 0 64px;color:#fff;position:relative;z-ind
           </div>
         </div>
 
+        <div class="fund-detail-card full-width">
+          <h5>Who is this for?</h5>
+          <div class="fund-detail-list" id="fundDetailWhoFor"></div>
+        </div>
+
         <div class="fund-detail-grid">
           <div class="fund-detail-col">
             <section class="fund-detail-section">
@@ -1188,10 +1284,6 @@ footer{background:#0d0d0d;padding:48px 0 64px;color:#fff;position:relative;z-ind
           </div>
         </div>
 
-        <div class="fund-detail-card full-width">
-          <h5>Who is this for?</h5>
-          <div class="fund-detail-list" id="fundDetailWhoFor"></div>
-        </div>
       </div>
 
       <div class="fund-detail-footer">
@@ -1210,93 +1302,6 @@ footer{background:#0d0d0d;padding:48px 0 64px;color:#fff;position:relative;z-ind
     </div>
   </div>
 </div>
-
-<!-- WHY INVEST WITH APA -->
-<section class="cov" id="features">
-  <div class="inner">
-    <div class="cov-head">
-      <div class="cov-head-copy">
-        <span class="stag">Why Invest With APA Asset Management</span>
-        <h2 class="sec-h2">Professional, diversified, and built for disciplined wealth growth</h2>
-        <p class="sec-p">APA's investment offering focuses on transparent fund choices, liquidity, and long-term investor confidence.</p>
-      </div>
-    </div>
-    <div class="cov-list">
-      <div class="cov-item">
-        <div class="cov-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
-        <div class="cov-item-text"><div class="cov-item-title">Professional Fund Management</div><div class="cov-item-desc">Managed by experienced investment professionals.</div></div>
-      </div>
-      <div class="cov-item">
-        <div class="cov-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <div class="cov-item-text"><div class="cov-item-title">Diversified Portfolio</div><div class="cov-item-desc">Investments spread across multiple asset classes.</div></div>
-      </div>
-      <div class="cov-item">
-        <div class="cov-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg></div>
-        <div class="cov-item-text"><div class="cov-item-title">Stable and Competitive Returns</div><div class="cov-item-desc">Focused on consistent income and capital growth over time.</div></div>
-      </div>
-      <div class="cov-item">
-        <div class="cov-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/></svg></div>
-        <div class="cov-item-text"><div class="cov-item-title">Liquidity When You Need It</div><div class="cov-item-desc">Access your funds within the withdrawal timelines of your selected fund.</div></div>
-      </div>
-      <div class="cov-item">
-        <div class="cov-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg></div>
-        <div class="cov-item-text"><div class="cov-item-title">Regulated and Trusted</div><div class="cov-item-desc">Licensed by the Capital Markets Authority in Kenya.</div></div>
-      </div>
-      <div class="cov-item">
-        <div class="cov-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-        <div class="cov-item-text"><div class="cov-item-title">Flexible Investment Options</div><div class="cov-item-desc">Start small and increase your investment over time.</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- RISK PROFILES -->
-<section class="risk-sec" id="risk">
-  <div class="inner">
-    <span class="stag">Investment Approach</span>
-    <h2 class="sec-h2">Your Investment Is Matched to Your Profile</h2>
-    <p class="sec-p">A short assessment helps match you to the right fund.</p>
-
-    <div class="risk-grid">
-      <div class="risk-card">
-        <div class="risk-card-num">C</div>
-        <h3>Conservative Profile</h3>
-        <p class="risk-desc">Focus on safety, liquidity, and preserving capital.</p>
-        <div class="risk-recommended">
-          <span class="risk-rec-lbl">Recommended Match</span>
-          <a href="#funds" class="risk-fund-link">Money Market Fund <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-        </div>
-      </div>
-      <div class="risk-card">
-        <div class="risk-card-num">M</div>
-        <h3>Moderate Profile</h3>
-        <p class="risk-desc">Balance between growth potential and portfolio stability.</p>
-        <div class="risk-recommended">
-          <span class="risk-rec-lbl">Recommended Match</span>
-          <div style="display:flex;gap:14px;margin-top:2px;flex-wrap:wrap">
-            <a href="#funds" class="risk-fund-link">Balanced Fund <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-          </div>
-        </div>
-      </div>
-      <div class="risk-card">
-        <div class="risk-card-num">A</div>
-        <h3>Growth Profile</h3>
-        <p class="risk-desc">Higher return expectations may lead to more growth-oriented balanced exposure.</p>
-        <div class="risk-recommended">
-          <span class="risk-rec-lbl">Recommended Match</span>
-          <a href="#funds" class="risk-fund-link">Balanced Fund <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-        </div>
-      </div>
-    </div>
-
-    <div class="risk-cta">
-      <button type="button" class="btn-primary" id="riskQuizOpen" style="display:inline-flex">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
-        Check Your Investor Profile
-      </button>
-    </div>
-  </div>
-</section>
 
 <div class="fund-modal risk-quiz-modal" id="riskQuizModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Investor profile quiz">
   <div class="fund-modal-panel risk-quiz-panel">
@@ -1395,144 +1400,91 @@ footer{background:#0d0d0d;padding:48px 0 64px;color:#fff;position:relative;z-ind
   </div>
 </div>
 
-<!-- ELIGIBILITY -->
-<section class="elig" id="eligibility">
-  <div class="inner">
-    <div class="split-layout split-reverse">
-      <div class="split-content">
-        <span class="stag">Who Can Apply</span>
-        <h2 class="sec-h2">Who Can Apply</h2>
-        <div class="elig-list">
-          <div class="elig-item">
-            <div class="elig-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <p><strong>Individual investors</strong> aged 18 years and above</p>
-          </div>
-          <div class="elig-item">
-            <div class="elig-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <p><strong>Joint account holders</strong> applying together</p>
-          </div>
-          <div class="elig-item">
-            <div class="elig-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <p><strong>Parents or guardians</strong> opening accounts for minors</p>
-          </div>
-          <div class="elig-item">
-            <div class="elig-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <p><strong>Corporate and institutional investors</strong> seeking managed fund exposure</p>
-          </div>
-          <div class="elig-item">
-            <div class="elig-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <p><strong>Applicants able to complete KYC</strong> (identity verification) and the funding process</p>
-          </div>
-        </div>
-        <a href="#apply" class="btn-primary" style="margin-top:28px;align-self:flex-start">Start Investing <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-      </div>
-      <div class="split-img split-img--photo" style="min-height:420px">
-        <img src="https://i.ibb.co/NnYvwJLC/benefits-uganda-entrepreneurship.jpg" alt="Investors reviewing account information together" loading="lazy" style="object-position:center 42%" />
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- BEFORE YOU APPLY -->
-<section class="before" id="before">
+<section class="before" id="apply">
   <div class="inner">
+    <div id="before"></div>
     <span class="stag">Before You Apply</span>
-    <h2 class="sec-h2">Prepare Before You Apply</h2>
-    <p class="sec-p">Keep these details ready before you start.</p>
+    <h2 class="sec-h2">Before You Apply</h2>
+    <p class="sec-p">Make sure you are eligible and keep the key application details ready before you begin.</p>
+    <div class="before-cards">
+      <div class="before-main">
+        <div class="before-layout">
+          <div class="cl-list">
 
-    <div class="before-layout">
-      <div class="cl-list">
+            <div class="cl-row">
+              <div class="cl-num">1</div>
+              <div class="cl-body">
+                <div class="cl-title">Identity Details</div>
+                <p class="cl-desc">Keep your National ID or Passport details ready.</p>
+              </div>
+            </div>
 
-        <div class="cl-row">
-          <div class="cl-num">1</div>
-          <div class="cl-body">
-            <div class="cl-title">Identity Details</div>
-            <p class="cl-desc">Keep your National ID or Passport details ready.</p>
-          </div>
-        </div>
+            <div class="cl-row">
+              <div class="cl-num">2</div>
+              <div class="cl-body">
+                <div class="cl-title">Contact and Occupation Details</div>
+                <p class="cl-desc">Prepare your phone, email, employer, occupation, and income details.</p>
+              </div>
+            </div>
 
-        <div class="cl-row">
-          <div class="cl-num">2</div>
-          <div class="cl-body">
-            <div class="cl-title">Contact and Occupation Details</div>
-            <p class="cl-desc">Prepare your phone, email, employer, occupation, and income details.</p>
-          </div>
-        </div>
+            <div class="cl-row">
+              <div class="cl-num">3</div>
+              <div class="cl-body">
+                <div class="cl-title">Bank Details</div>
+                <p class="cl-desc">Have your bank account number and bank information ready.</p>
+              </div>
+            </div>
 
-        <div class="cl-row">
-          <div class="cl-num">3</div>
-          <div class="cl-body">
-            <div class="cl-title">Bank Details</div>
-            <p class="cl-desc">Have your bank account number and bank information ready.</p>
-          </div>
-        </div>
+            <div class="cl-row">
+              <div class="cl-num">4</div>
+              <div class="cl-body">
+                <div class="cl-title">Source of Funds</div>
+                <p class="cl-desc">Be ready to confirm whether the funds come from salary, business income, or savings.</p>
+              </div>
+            </div>
 
-        <div class="cl-row">
-          <div class="cl-num">4</div>
-          <div class="cl-body">
-            <div class="cl-title">Source of Funds</div>
-            <p class="cl-desc">Be ready to confirm whether the funds come from salary, business income, or savings.</p>
-          </div>
-        </div>
+            <div class="cl-row">
+              <div class="cl-num">5</div>
+              <div class="cl-body">
+                <div class="cl-title">Tax Information</div>
+                <p class="cl-desc">Prepare your KRA PIN and any FATCA or CRS tax details (tax residency checks).</p>
+              </div>
+            </div>
 
-        <div class="cl-row">
-          <div class="cl-num">5</div>
-          <div class="cl-body">
-            <div class="cl-title">Tax Information</div>
-            <p class="cl-desc">Prepare your KRA PIN and any FATCA or CRS tax details (tax residency checks).</p>
-          </div>
-        </div>
+            <div class="cl-row">
+              <div class="cl-num">6</div>
+              <div class="cl-body">
+                <div class="cl-title">Investment Details</div>
+                <p class="cl-desc">Decide on your fund choice, amount, and preferred payment method.</p>
+              </div>
+            </div>
 
-        <div class="cl-row">
-          <div class="cl-num">6</div>
-          <div class="cl-body">
-            <div class="cl-title">Investment Details</div>
-            <p class="cl-desc">Decide on your fund choice, amount, and preferred payment method.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- APPLICATION STEPS -->
-<section class="enroll-sec" id="apply">
-  <div class="inner">
-    <span class="stag">After You Invest</span>
-    <h2 class="sec-h2">What Happens After You Invest</h2>
-    <p class="sec-p">Once your payment is received, your account is activated and the selected fund begins working for you.</p>
-
-    <div class="enroll-grid">
-      <div class="enroll-panel">
-        <h3 class="enroll-title">After You Invest</h3>
-        <div class="enroll-cards">
-          <div class="enroll-card">
-            <div class="enroll-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <p class="enroll-card-title">Account Confirmation</p>
-            <p class="enroll-card-copy">Your account is activated after payment is received.</p>
-          </div>
-          <div class="enroll-card">
-            <div class="enroll-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg></div>
-            <p class="enroll-card-title">Units Allocation</p>
-            <p class="enroll-card-copy">Units are allocated based on your investment amount and selected fund.</p>
-          </div>
-          <div class="enroll-card">
-            <div class="enroll-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><polyline points="3 9 21 9"/><polyline points="9 21 9 9"/></svg></div>
-            <p class="enroll-card-title">Portfolio Management</p>
-            <p class="enroll-card-copy">Funds are invested according to the selected unit trust strategy.</p>
-          </div>
-          <div class="enroll-card">
-            <div class="enroll-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-            <p class="enroll-card-title">Statements and Withdrawals</p>
-            <p class="enroll-card-copy">You receive updates and can withdraw within fund timelines, such as about 3 business days for MMF.</p>
           </div>
         </div>
       </div>
-
-      <div class="enroll-visual">
-        <img src="https://i.ibb.co/tTRtnkLv/hero-uganda-businesswoman.jpg" alt="Investor reviewing fund confirmation and account information" loading="lazy" />
-      </div>
+      <aside class="before-elig-card">
+       
+        <h3>Make sure you are eligible</h3>
+        <div class="before-elig-list">
+          <div class="before-elig-item">
+            <div class="before-elig-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <span><strong>Individuals aged 18+</strong> and joint applicants can apply.</span>
+          </div>
+          <div class="before-elig-item">
+            <div class="before-elig-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <span><strong>Parents or guardians</strong> may apply on behalf of minors.</span>
+          </div>
+          <div class="before-elig-item">
+            <div class="before-elig-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <span><strong>Corporate and institutional investors</strong> are also eligible.</span>
+          </div>
+          <div class="before-elig-item">
+            <div class="before-elig-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <span><strong>KYC, funding checks, and fund selection</strong> should be ready before submission.</span>
+          </div>
+        </div>
+      </aside>
     </div>
   </div>
 </section>
@@ -1577,76 +1529,44 @@ footer{background:#0d0d0d;padding:48px 0 64px;color:#fff;position:relative;z-ind
 <!-- CTA SECTION -->
 <section class="cta-bg" id="start">
   <div class="cta-inner">
-    <span class="stag" style="background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.35);color:var(--white)">Start Today</span>
-    <h2>Begin Your<br/><span>Investment Journey</span></h2>
-    <p>Start your application and choose the fund that matches your financial goals.</p>
-    <div class="cta-btns">
-      <a href="#apply" class="btn-cta">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        Start Investing
-      </a>
-      <a href="#funds" class="btn-cta-ghost">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-        View Funds
-      </a>
-    </div>
-    <p style="font-size:12px;color:rgba(255,255,255,.3);margin-top:28px">Past performance is not indicative of future results. Unit values may go up or down depending on market conditions.</p>
-  </div>
-</section>
-
-<!-- APPLICATION STRUCTURE -->
-<section class="wa-sec" id="contact">
-  <div class="wa-inner">
-    <div class="wa-img-wrap">
-      <div class="wa-mockup">
-        <div class="wa-phone">
-          <div class="wa-phone-screen">
-            <div class="wa-chat-head">
-              <div class="wa-chat-avatar">
-                <img src="https://www.apainsurance.org/img/logon.png" alt="APA Asset Management" />
-              </div>
-              <div class="wa-chat-meta">
-                <strong>Application Guide</strong>
-                <span>Typical form sections</span>
-              </div>
-            </div>
-            <div class="wa-chat-body">
-              <div class="wa-bubble">
-                <strong>Application checklist</strong>
-                <p>Gather your ID or passport, KRA PIN, bank details, source of funds, and contact information.</p>
-                <span class="wa-time">10:24 AM</span>
-              </div>
-              <div class="wa-bubble">
-                <p>You will also capture address details, beneficiary information, fund selection, amount, and payment method.</p>
-                <span class="wa-time">10:24 AM</span>
-              </div>
-              <div class="wa-quick-actions">
-                <span class="wa-chip">Personal details</span>
-                <span class="wa-chip">Banking details</span>
-                <span class="wa-chip">Tax compliance</span>
-                <span class="wa-chip">Fund selection</span>
-              </div>
-            </div>
-          </div>
+    <div class="cta-top">
+      <div class="cta-top-copy">
+        <span class="stag">Start Today</span>
+        <h2>Clear fund choices for disciplined investing.</h2>
+      </div>
+      <div class="cta-metrics" aria-label="Key highlights">
+        <div class="cta-metric">
+          <span class="cta-metric-value">2</span>
+          <span class="cta-metric-label">Fund options</span>
+        </div>
+        <div class="cta-metric">
+          <span class="cta-metric-value">KES 1,000</span>
+          <span class="cta-metric-label">Starting point</span>
+        </div>
+        <div class="cta-metric">
+          <span class="cta-metric-value">CMA</span>
+          <span class="cta-metric-label">Regulated in Kenya</span>
         </div>
       </div>
     </div>
-    <div class="wa-cnt">
-      <span class="stag">How to Apply</span>
-      <h2>What the Application Covers</h2>
-      <p>The form structure typically captures personal details, address details, banking details, source of funds, tax compliance, beneficiary information, fund selection, investment amount, and payment method.</p>
-      <div class="wa-topics">
-        <span class="wa-tp"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M12 2H4a1 1 0 00-1 1v10a1 1 0 001 1h8a1 1 0 001-1V3a1 1 0 00-1-1z"/><line x1="5" y1="6" x2="11" y2="6"/><line x1="5" y1="9" x2="9" y2="9"/></svg> Personal details</span>
-        <span class="wa-tp"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M14 2H2a1 1 0 00-1 1v9l3-3h10a1 1 0 001-1V3a1 1 0 00-1-1z"/></svg> Address details</span>
-        <span class="wa-tp"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><rect x="1" y="4" width="14" height="9" rx="1.5"/><path d="M5 4V3a2 2 0 014 0v1"/></svg> Banking details</span>
-        <span class="wa-tp"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M2 12s2-3 6-3 6 3 6 3"/><circle cx="8" cy="6" r="3"/></svg> Beneficiary details</span>
-        <span class="wa-tp"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><circle cx="8" cy="8" r="6"/><line x1="8" y1="5" x2="8" y2="8"/><line x1="8" y1="11" x2="8.01" y2="11"/></svg> Payment method</span>
+    <div class="cta-panel">
+      <div class="cta-panel-copy">
+        <h3>Start with a quick profile check.</h3>
+        <p>Answer a few questions, see which fund may fit best, and move forward with more clarity.</p>
+        <div class="cta-btns">
+          <a href="#" class="btn-cta open-risk-quiz">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            Take Risk Quiz
+          </a>
+          <a href="#funds" class="btn-cta-ghost">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            View Funds
+          </a>
+        </div>
       </div>
-      <a href="#before" class="btn-wa">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 5h16v14H4z"/><path d="M8 9h8"/><path d="M8 13h5"/></svg>
-        Prepare Your Details
-      </a>
-      <p class="wa-hrs">Risk profiling happens before the final fund recommendation.</p>
+      <div class="cta-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m8.5 12.5 2.2 2.2 4.8-5.2"/></svg>
+      </div>
     </div>
   </div>
 </section>
@@ -1671,17 +1591,17 @@ footer{background:#0d0d0d;padding:48px 0 64px;color:#fff;position:relative;z-ind
         <ul>
           <li><a href="#how-it-works">How It Works</a></li>
           <li><a href="#funds">Our Funds</a></li>
-          <li><a href="#features">Why APA</a></li>
-          <li><a href="#eligibility">Who Can Apply</a></li>
+          <li><a href="#planner">Planner</a></li>
+          <li><a href="#apply">Before You Apply</a></li>
           <li><a href="#faq">FAQ</a></li>
         </ul>
       </div>
       <div class="ft-col">
         <h4>Application</h4>
         <ul>
-          <li><a href="#before">Before You Apply</a></li>
-          <li><a href="#contact">How to Apply</a></li>
-          <li><a href="#apply">After You Invest</a></li>
+          <li><a href="#apply">Before You Apply</a></li>
+          <li><a href="#how-it-works">Investor Journey</a></li>
+          <li><a href="#planner">Investment Planner</a></li>
           <li><a href="#start">Start Today</a></li>
           <li><a href="#benefits">What Is a Unit Trust</a></li>
         </ul>
@@ -2224,8 +2144,8 @@ Array.prototype.slice.call(document.querySelectorAll('a[href^="#"]')).forEach(fu
 (function(){
   var storageKey = 'apaRiskQuizResult';
   var quizModal = document.getElementById('riskQuizModal');
-  var openBtn = document.getElementById('riskQuizOpen');
-  if(!quizModal || !openBtn){ return; }
+  var openBtns = Array.prototype.slice.call(document.querySelectorAll('#riskQuizOpen, .open-risk-quiz'));
+  if(!quizModal || !openBtns.length){ return; }
 
   var closeBtn = quizModal.querySelector('.fund-modal-close');
   var questionScene = document.getElementById('riskQuizQuestionScene');
@@ -2509,9 +2429,12 @@ Array.prototype.slice.call(document.querySelectorAll('a[href^="#"]')).forEach(fu
     statusEl.textContent = 'Sharing is not available in this browser.';
   }
 
-  openBtn.addEventListener('click', function(){
-    startQuiz();
-    setOpen(true);
+  openBtns.forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      startQuiz();
+      setOpen(true);
+    });
   });
 
   closeBtn.addEventListener('click', function(){
