@@ -206,8 +206,8 @@ linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02));border:1px
 .funds-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:44px}
 .fund-card{background:var(--bg-lt);border-radius:16px;padding:20px 20px 24px;border:1px solid var(--border);transition:transform .22s,box-shadow .22s,border-color .22s;display:flex;flex-direction:column;gap:16px}
 .fund-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-md);border-color:var(--primary)}
-.fund-card-media{position:relative;overflow:hidden;border-radius:14px;background:#dbe8fb;width:100%}
-.fund-card-media img{width:100%;height:auto;display:block;object-fit:contain}
+.fund-card-media{position:relative;overflow:hidden;border-radius:14px;aspect-ratio:16/9;background:#dbe8fb; max-height: 150px;}
+.fund-card-media img{width:100%;height:100%;object-fit:cover;display:block}
 .fund-card-media::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,26,48,.04),rgba(7,26,48,.18))}
 .fund-card-icon{width:52px;height:52px;background:var(--primary);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .2s}
 .fund-card:hover .fund-card-icon{transform:scale(1.08)}
