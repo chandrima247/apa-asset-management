@@ -236,8 +236,9 @@ linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02));border:1px
 .custom-scrollbar::-webkit-scrollbar{width:6px}
 .custom-scrollbar::-webkit-scrollbar-track{background:#f1f5f9}
 .custom-scrollbar::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:999px}
-.fund-detail-panel{width:min(1080px,100%);max-height:min(90vh,860px);overflow:auto;border-radius:28px}
-.fund-detail-shell{display:flex;flex-direction:column;background:#fff}
+.fund-detail-panel{width:min(1080px,100%);max-height:min(90vh,860px);overflow:hidden;display:flex;flex-direction:column;border-radius:28px}
+.fund-detail-shell{flex:1;overflow:hidden;display:flex;flex-direction:column;background:#fff}
+.fund-detail-content{flex:1;overflow:auto}
 .fund-detail-header{position:relative;padding:24px 28px;border-bottom:1px solid #eef2f7;display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
 .fund-detail-header-main{display:flex;gap:20px;align-items:flex-start;padding-right:52px}
 .fund-detail-iconbox{width:56px;height:56px;border-radius:18px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;box-shadow:0 12px 28px rgba(15,23,42,.16)}
@@ -1281,11 +1282,6 @@ footer{background:#071a30;padding:48px 0 64px;color:#fff;position:relative;z-ind
           </div>
         </div>
 
-        <div class="fund-detail-card full-width">
-          <h5>Who is this for?</h5>
-          <div class="fund-detail-list" id="fundDetailWhoFor"></div>
-        </div>
-
         <div class="fund-detail-grid">
           <div class="fund-detail-col">
             <section class="fund-detail-section">
@@ -1308,6 +1304,11 @@ footer{background:#071a30;padding:48px 0 64px;color:#fff;position:relative;z-ind
               <div class="fund-detail-facts" id="fundDetailFacts"></div>
             </div>
           </div>
+        </div>
+
+        <div class="fund-detail-card full-width">
+          <h5>Who is this for?</h5>
+          <div class="fund-detail-list" id="fundDetailWhoFor"></div>
         </div>
 
       </div>
